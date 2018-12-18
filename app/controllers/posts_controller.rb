@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   def create
-      @post = Post.create()
+    @post = Post.create()
   end 
   
 end
