@@ -200,3 +200,27 @@ ActionController::UrlGenerationError (No route matches {:action=>"show", :contro
   app/controllers/posts_controller.rb:19:in `create'
 
 
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.9ms)
+
+
+Started GET "/posts/new" for 174.16.138.180 at 2018-12-18 18:01:18 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 234ms (Views: 233.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 174.16.138.180 at 2018-12-18 18:01:55 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4YDvUKNEHzC8HejM6f2XM9sEGAgdI9M0fv7zslRuEJCJp9q7XAYLTwLB3FPiw5YUt2N7MBZdB5tnh3613onNEg==", "title"=>"Post Title 2", "description"=>"This is another post description about a post.", "commit"=>"Submit Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Post Title 2"], ["description", "This is another post description about a post."], ["created_at", "2018-12-18 18:01:55.826739"], ["updated_at", "2018-12-18 18:01:55.826739"]]
+  [1m[36m (93.6ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 96ms (ActiveRecord: 93.9ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"posts", :id=>nil} missing required keys: [:id]):
+  app/controllers/posts_controller.rb:19:in `create'
+
+
