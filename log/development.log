@@ -233,3 +233,17 @@ ActionController::UrlGenerationError (No route matches {:action=>"show", :contro
 Started GET "/posts/new" for 174.16.138.180 at 2018-12-18 18:03:02 +0000
 Processing by PostsController#new as HTML
   Rendered posts/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 34ms (Views: 24.8ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/posts" for 174.16.138.180 at 2018-12-18 18:03:17 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TOzsPsx9eWLQeP79dirw4Jj2POOsoUuXTYCo4MdH+Acky9nVMz9tHW6kymJ9FPHH9JFf26ffnzhU+SXnTaAlhQ==", "title"=>"Post Title 3", "description"=>"Another attempt to save. Routes not working correctly?", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Post Title 3"], ["description", "Another attempt to save. Routes not working correctly?"], ["created_at", "2018-12-18 18:03:17.317157"], ["updated_at", "2018-12-18 18:03:17.317157"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+Redirected to http://165.227.60.187:38839/posts/6
+Completed 302 Found in 7ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/posts/6" for 174.16.138.180 at 2018-12-18 18:03:17 +0000
